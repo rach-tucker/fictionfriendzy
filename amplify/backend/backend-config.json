@@ -1,0 +1,301 @@
+{
+  "api": {
+    "fictionfriendzyapp": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "fictionfriendzyapp68d50aaf"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authfictionfriendzyapp68d50aaf"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-04-18T20:32:53.344Z",
+              "apiKeyExpirationDays": 365,
+              "description": "GraphQLAPIKey"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "fictionfriendzyapp68d50aaf": {
+      "customAuth": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafDefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "NAME",
+          "PHONE_NUMBER"
+        ],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "FFDynamoDBStoriesTrigger683b555a": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "FFDynamoDBStories"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "FFDynamoDBUsersTrigger91711009": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "FFDynamoDBUsers"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fictionfriendzyapp68d50aafCreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fictionfriendzyapp68d50aafCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fictionfriendzyapp68d50aafDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_FFDynamoDBStoriesTrigger683b555a_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "FFDynamoDBStoriesTrigger683b555a"
+        }
+      ]
+    },
+    "AMPLIFY_function_FFDynamoDBStoriesTrigger683b555a_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "FFDynamoDBStoriesTrigger683b555a"
+        }
+      ]
+    },
+    "AMPLIFY_function_FFDynamoDBUsersTrigger91711009_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "FFDynamoDBUsersTrigger91711009"
+        }
+      ]
+    },
+    "AMPLIFY_function_FFDynamoDBUsersTrigger91711009_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "FFDynamoDBUsersTrigger91711009"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafDefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafDefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafVerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafVerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_fictionfriendzyapp68d50aafVerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "FFDynamoDBStories": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "FFDynamoDBUsers": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

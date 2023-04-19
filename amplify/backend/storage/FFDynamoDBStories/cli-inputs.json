@@ -1,0 +1,28 @@
+{
+  "resourceName": "FFDynamoDBStories",
+  "tableName": "Stories",
+  "partitionKey": {
+    "fieldName": "ID",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "createdAt",
+    "fieldType": "string"
+  },
+  "gsi": [
+    {
+      "name": "findAuthors",
+      "partitionKey": {
+        "fieldName": "authors",
+        "fieldType": "string"
+      },
+      "sortKey": {
+        "fieldName": "ID",
+        "fieldType": "string"
+      }
+    }
+  ],
+  "triggerFunctions": [
+    "FFDynamoDBStoriesTrigger683b555a"
+  ]
+}

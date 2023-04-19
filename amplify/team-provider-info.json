@@ -1,0 +1,58 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fictionfriendzyapp-dev-150744-authRole",
+      "UnauthRoleArn": "arn:aws:iam::228660212855:role/amplify-fictionfriendzyapp-dev-150744-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::228660212855:role/amplify-fictionfriendzyapp-dev-150744-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+      "UnauthRoleName": "amplify-fictionfriendzyapp-dev-150744-unauthRole",
+      "StackName": "amplify-fictionfriendzyapp-dev-150744",
+      "StackId": "arn:aws:cloudformation:us-west-1:228660212855:stack/amplify-fictionfriendzyapp-dev-150744/dac0b070-deed-11ed-98d3-065700f578f3",
+      "AmplifyAppId": "dqb0eslug2glk",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-fictionfriendzyapp-dev-150744-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "fictionfriendzyapp68d50aaf": {}
+      },
+      "function": {
+        "fictionfriendzyapp68d50aafDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/fictionfriendzyapp68d50aafDefineAuthChallenge-775174486161624e4253-build.zip"
+        },
+        "fictionfriendzyapp68d50aafCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/fictionfriendzyapp68d50aafCreateAuthChallenge-613449594e2b6c2b7634-build.zip"
+        },
+        "fictionfriendzyapp68d50aafVerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "6Le8BGIlAAAAAMpYXHsHWuW38sHHZ4bkrlit6RdG",
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/fictionfriendzyapp68d50aafVerifyAuthChallengeResponse-4e413132583950345741-build.zip"
+        },
+        "fictionfriendzyapp68d50aafCustomMessage": {
+          "REDIRECTURL": "",
+          "EMAILSUBJECT": "Confirm Your Email for Fiction Friendzy",
+          "EMAILMESSAGE": "Click on the link to confirm your email: ",
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/fictionfriendzyapp68d50aafCustomMessage-3834736f347174504267-build.zip"
+        },
+        "FFDynamoDBStoriesTrigger683b555a": {
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/FFDynamoDBStoriesTrigger683b555a-6c5057314c6642357a4f-build.zip"
+        },
+        "FFDynamoDBUsersTrigger91711009": {
+          "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
+          "s3Key": "amplify-builds/FFDynamoDBUsersTrigger91711009-593931786b33716c6777-build.zip"
+        }
+      },
+      "api": {
+        "fictionfriendzyapp": {}
+      },
+      "storage": {
+        "FFDynamoDBStories": {},
+        "FFDynamoDBUsers": {}
+      }
+    }
+  }
+}
