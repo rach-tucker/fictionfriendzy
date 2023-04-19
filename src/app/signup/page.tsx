@@ -1,12 +1,12 @@
 import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Signup() {
   return (
     <main className={styles.main}>
-      <h1>Home Page</h1>
+      <h1>Sign Up Page</h1>
     </main>
   )
 }

@@ -10,3 +10,6 @@ projects:
         codeGenTarget: typescript
         generatedFileName: src/app/api/graphql/graphql.ts
         docsFilePath: src/app/api
+extensions:
+  amplify:
+    version: 3
