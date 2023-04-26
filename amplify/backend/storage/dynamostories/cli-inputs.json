@@ -1,0 +1,16 @@
+{
+  "resourceName": "dynamostories",
+  "tableName": "Story",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "authors",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "dynamostoriesTriggere919f195"
+  ]
+}

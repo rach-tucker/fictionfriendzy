@@ -1,5 +1,5 @@
 {
-  "AppSyncApiName": "fictionfriendzyapp",
+  "AppSyncApiName": "fictionfriendzyapi",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {

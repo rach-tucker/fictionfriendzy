@@ -5,11 +5,11 @@
 export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -23,11 +23,11 @@ export const listUsers = /* GraphQL */ `
   ) {
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        ID
+        id
         firstName
         lastName
-        email
         phoneNumber
+        email
         createdAt
         updatedAt
       }
@@ -38,7 +38,7 @@ export const listUsers = /* GraphQL */ `
 export const getStory = /* GraphQL */ `
   query GetStory($id: ID!) {
     getStory(id: $id) {
-      ID
+      id
       title
       authors
       genre
@@ -59,7 +59,7 @@ export const listStories = /* GraphQL */ `
   ) {
     listStories(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        ID
+        id
         title
         authors
         genre

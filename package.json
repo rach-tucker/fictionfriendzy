@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.319.0",
+    "@aws-sdk/lib-dynamodb": "^3.319.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
+    "aws-amplify": "^5.1.2",
+    "aws-sdk": "^2.1361.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "uuidv4": "^6.2.13"
   }
 }

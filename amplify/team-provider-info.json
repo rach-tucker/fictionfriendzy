@@ -37,21 +37,21 @@
           "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
           "s3Key": "amplify-builds/fictionfriendzyapp68d50aafCustomMessage-3834736f347174504267-build.zip"
         },
-        "FFDynamoDBStoriesTrigger683b555a": {
+        "dynamostoriesTriggere919f195": {
           "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
-          "s3Key": "amplify-builds/FFDynamoDBStoriesTrigger683b555a-6c5057314c6642357a4f-build.zip"
+          "s3Key": "amplify-builds/dynamostoriesTriggere919f195-5433757953657639726c-build.zip"
         },
-        "FFDynamoDBUsersTrigger91711009": {
+        "dynamousersTrigger10d20da4": {
           "deploymentBucketName": "amplify-fictionfriendzyapp-dev-150744-deployment",
-          "s3Key": "amplify-builds/FFDynamoDBUsersTrigger91711009-593931786b33716c6777-build.zip"
+          "s3Key": "amplify-builds/dynamousersTrigger10d20da4-5031565a6171644f4b74-build.zip"
         }
       },
       "api": {
-        "fictionfriendzyapp": {}
+        "fictionfriendzyapi": {}
       },
       "storage": {
-        "FFDynamoDBStories": {},
-        "FFDynamoDBUsers": {}
+        "dynamostories": {},
+        "dynamousers": {}
       }
     }
   }

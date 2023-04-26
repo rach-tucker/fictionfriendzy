@@ -1,9 +1,8 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "fictionfriendzyapp": {
+    "fictionfriendzyapi": {
       "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string",
-      "GraphQLAPIKeyOutput": "string"
+      "GraphQLAPIIdOutput": "string"
     }
   },
   "auth": {
@@ -21,14 +20,14 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "FFDynamoDBStoriesTrigger683b555a": {
+    "dynamostoriesTriggere919f195": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
     },
-    "FFDynamoDBUsersTrigger91711009": {
+    "dynamousersTrigger10d20da4": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
@@ -65,7 +64,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "storage": {
-    "FFDynamoDBStories": {
+    "dynamostories": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",
@@ -75,7 +74,7 @@ export type AmplifyDependentResourcesAttributes = {
       "SortKeyType": "string",
       "StreamArn": "string"
     },
-    "FFDynamoDBUsers": {
+    "dynamousers": {
       "Arn": "string",
       "Name": "string",
       "PartitionKeyName": "string",

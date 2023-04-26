@@ -1,6 +1,6 @@
 {
   "api": {
-    "fictionfriendzyapp": {
+    "fictionfriendzyapi": {
       "dependsOn": [
         {
           "attributes": [
@@ -12,21 +12,12 @@
       ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authfictionfriendzyapp68d50aaf"
-              }
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDate": "2024-04-18T20:32:53.344Z",
-              "apiKeyExpirationDays": 365,
-              "description": "GraphQLAPIKey"
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authfictionfriendzyapp68d50aaf"
+            }
           }
         }
       },
@@ -105,7 +96,7 @@
     }
   },
   "function": {
-    "FFDynamoDBStoriesTrigger683b555a": {
+    "dynamostoriesTriggere919f195": {
       "build": true,
       "dependsOn": [
         {
@@ -115,13 +106,13 @@
             "StreamArn"
           ],
           "category": "storage",
-          "resourceName": "FFDynamoDBStories"
+          "resourceName": "dynamostories"
         }
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "FFDynamoDBUsersTrigger91711009": {
+    "dynamousersTrigger10d20da4": {
       "build": true,
       "dependsOn": [
         {
@@ -131,7 +122,7 @@
             "StreamArn"
           ],
           "category": "storage",
-          "resourceName": "FFDynamoDBUsers"
+          "resourceName": "dynamousers"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -159,35 +150,35 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_FFDynamoDBStoriesTrigger683b555a_deploymentBucketName": {
+    "AMPLIFY_function_dynamostoriesTriggere919f195_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "FFDynamoDBStoriesTrigger683b555a"
+          "resourceName": "dynamostoriesTriggere919f195"
         }
       ]
     },
-    "AMPLIFY_function_FFDynamoDBStoriesTrigger683b555a_s3Key": {
+    "AMPLIFY_function_dynamostoriesTriggere919f195_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "FFDynamoDBStoriesTrigger683b555a"
+          "resourceName": "dynamostoriesTriggere919f195"
         }
       ]
     },
-    "AMPLIFY_function_FFDynamoDBUsersTrigger91711009_deploymentBucketName": {
+    "AMPLIFY_function_dynamousersTrigger10d20da4_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "FFDynamoDBUsersTrigger91711009"
+          "resourceName": "dynamousersTrigger10d20da4"
         }
       ]
     },
-    "AMPLIFY_function_FFDynamoDBUsersTrigger91711009_s3Key": {
+    "AMPLIFY_function_dynamousersTrigger10d20da4_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "FFDynamoDBUsersTrigger91711009"
+          "resourceName": "dynamousersTrigger10d20da4"
         }
       ]
     },
@@ -289,11 +280,11 @@
     }
   },
   "storage": {
-    "FFDynamoDBStories": {
+    "dynamostories": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },
-    "FFDynamoDBUsers": {
+    "dynamousers": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     }

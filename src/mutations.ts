@@ -8,11 +8,11 @@ export const createUser = /* GraphQL */ `
     $condition: ModelUserConditionInput
   ) {
     createUser(input: $input, condition: $condition) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -24,11 +24,11 @@ export const updateUser = /* GraphQL */ `
     $condition: ModelUserConditionInput
   ) {
     updateUser(input: $input, condition: $condition) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -40,11 +40,11 @@ export const deleteUser = /* GraphQL */ `
     $condition: ModelUserConditionInput
   ) {
     deleteUser(input: $input, condition: $condition) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -56,7 +56,7 @@ export const createStory = /* GraphQL */ `
     $condition: ModelStoryConditionInput
   ) {
     createStory(input: $input, condition: $condition) {
-      ID
+      id
       title
       authors
       genre
@@ -75,7 +75,7 @@ export const updateStory = /* GraphQL */ `
     $condition: ModelStoryConditionInput
   ) {
     updateStory(input: $input, condition: $condition) {
-      ID
+      id
       title
       authors
       genre
@@ -94,7 +94,7 @@ export const deleteStory = /* GraphQL */ `
     $condition: ModelStoryConditionInput
   ) {
     deleteStory(input: $input, condition: $condition) {
-      ID
+      id
       title
       authors
       genre

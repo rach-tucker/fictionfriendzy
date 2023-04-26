@@ -5,11 +5,11 @@
 export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
     onCreateUser(filter: $filter) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -18,11 +18,11 @@ export const onCreateUser = /* GraphQL */ `
 export const onUpdateUser = /* GraphQL */ `
   subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
     onUpdateUser(filter: $filter) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -31,11 +31,11 @@ export const onUpdateUser = /* GraphQL */ `
 export const onDeleteUser = /* GraphQL */ `
   subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
     onDeleteUser(filter: $filter) {
-      ID
+      id
       firstName
       lastName
-      email
       phoneNumber
+      email
       createdAt
       updatedAt
     }
@@ -44,7 +44,7 @@ export const onDeleteUser = /* GraphQL */ `
 export const onCreateStory = /* GraphQL */ `
   subscription OnCreateStory($filter: ModelSubscriptionStoryFilterInput) {
     onCreateStory(filter: $filter) {
-      ID
+      id
       title
       authors
       genre
@@ -60,7 +60,7 @@ export const onCreateStory = /* GraphQL */ `
 export const onUpdateStory = /* GraphQL */ `
   subscription OnUpdateStory($filter: ModelSubscriptionStoryFilterInput) {
     onUpdateStory(filter: $filter) {
-      ID
+      id
       title
       authors
       genre
@@ -76,7 +76,7 @@ export const onUpdateStory = /* GraphQL */ `
 export const onDeleteStory = /* GraphQL */ `
   subscription OnDeleteStory($filter: ModelSubscriptionStoryFilterInput) {
     onDeleteStory(filter: $filter) {
-      ID
+      id
       title
       authors
       genre

@@ -1,21 +1,21 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.0.5\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.1.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "env": {
       "Type": "String"
     },
-    "storageFFDynamoDBStoriesName": {
+    "storagedynamousersName": {
       "Type": "String",
-      "Default": "storageFFDynamoDBStoriesName"
+      "Default": "storagedynamousersName"
     },
-    "storageFFDynamoDBStoriesArn": {
+    "storagedynamousersArn": {
       "Type": "String",
-      "Default": "storageFFDynamoDBStoriesArn"
+      "Default": "storagedynamousersArn"
     },
-    "storageFFDynamoDBStoriesStreamArn": {
+    "storagedynamousersStreamArn": {
       "Type": "String",
-      "Default": "storageFFDynamoDBStoriesArn"
+      "Default": "storagedynamousersArn"
     },
     "deploymentBucketName": {
       "Type": "String"
@@ -46,12 +46,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "FFDynamoDBStoriesTrigger683b555a",
+            "dynamousersTrigger10d20da4",
             {
               "Fn::Join": [
                 "",
                 [
-                  "FFDynamoDBStoriesTrigger683b555a",
+                  "dynamousersTrigger10d20da4",
                   "-",
                   {
                     "Ref": "env"
@@ -92,12 +92,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "FFDynamoDBStoriesLambdaRole683b555a",
+            "dynamousersLambdaRole10d20da4",
             {
               "Fn::Join": [
                 "",
                 [
-                  "FFDynamoDBStoriesLambdaRole683b555a",
+                  "dynamousersLambdaRole10d20da4",
                   "-",
                   {
                     "Ref": "env"
@@ -168,13 +168,13 @@
         }
       }
     },
-    "FFDynamoDBStoriesTriggerPolicy": {
+    "dynamousersTriggerPolicy": {
       "DependsOn": [
         "LambdaExecutionRole"
       ],
       "Type": "AWS::IAM::Policy",
       "Properties": {
-        "PolicyName": "lambda-trigger-policy-FFDynamoDBStories",
+        "PolicyName": "lambda-trigger-policy-dynamousers",
         "Roles": [
           {
             "Ref": "LambdaExecutionRole"
@@ -193,7 +193,7 @@
               ],
               "Resource": [
                 {
-                  "Ref": "storageFFDynamoDBStoriesStreamArn"
+                  "Ref": "storagedynamousersStreamArn"
                 }
               ]
             }
@@ -201,16 +201,16 @@
         }
       }
     },
-    "FFDynamoDBStoriesTrigger": {
+    "dynamousersTrigger": {
       "Type": "AWS::Lambda::EventSourceMapping",
       "DependsOn": [
-        "FFDynamoDBStoriesTriggerPolicy"
+        "dynamousersTriggerPolicy"
       ],
       "Properties": {
         "BatchSize": 100,
         "Enabled": true,
         "EventSourceArn": {
-          "Ref": "storageFFDynamoDBStoriesStreamArn"
+          "Ref": "storagedynamousersStreamArn"
         },
         "FunctionName": {
           "Fn::GetAtt": [

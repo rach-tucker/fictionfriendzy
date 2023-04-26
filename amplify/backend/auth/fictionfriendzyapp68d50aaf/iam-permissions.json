@@ -1,0 +1,51 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:AdminCreateUser",
+                "cognito-idp:AdminDeleteUser",
+                "cognito-idp:AdminUpdateUserAttributes",
+                "cognito-idp:AdminGetUser",
+                "cognito-idp:ListUsers",
+                "cognito-idp:ListGroups",
+                "cognito-idp:AdminAddUserToGroup",
+                "cognito-idp:AdminRemoveUserFromGroup",
+                "cognito-idp:AdminEnableUser",
+                "cognito-idp:AdminDisableUser"
+            ],
+            "Resource": [
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs",
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs/group/*",
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs/user/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:SignUp",
+                "cognito-idp:InitiateAuth",
+                "cognito-idp:RespondToAuthChallenge",
+                "cognito-idp:ForgotPassword",
+                "cognito-idp:ConfirmForgotPassword",
+                "cognito-idp:ChangePassword",
+                "cognito-idp:GlobalSignOut"
+            ],
+            "Resource": [
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:AdminInitiateAuth",
+                "cognito-idp:AdminRespondToAuthChallenge"
+            ],
+            "Resource": [
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs",
+                "arn:aws:cognito-idp:us-west-1:228660212855:userpool/us-west-1_GWineHsTs/client/6ljvcs589frf58vbh0i5jhkk80"
+            ]
+        }
+    ]
+}

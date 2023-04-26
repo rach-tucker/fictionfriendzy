@@ -1,0 +1,16 @@
+{
+  "resourceName": "dynamousers",
+  "tableName": "User",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "email",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "dynamousersTrigger10d20da4"
+  ]
+}
