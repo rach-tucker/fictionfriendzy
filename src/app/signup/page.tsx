@@ -5,7 +5,12 @@ import { Amplify } from 'aws-amplify';
 import awsmobile from '../../aws-exports';
 import { ISignUpResult } from "amazon-cognito-identity-js";
 import { v4 as uuidv4 } from 'uuid';
-import AWS, { Credentials } from "aws-sdk";
+import AWS from "aws-sdk";
+import dynamic from 'next/dynamic';
+
+const Prompt = dynamic (() => import ('../prompt/page'), {
+  ssr: false,
+})
 
 Amplify.configure(awsmobile);
 
@@ -19,11 +24,8 @@ const ddbDocClient = new AWS.DynamoDB.DocumentClient({
   credentials,
 });
 
-interface SignupFormProps {
-  onSuccess: () => void;
-}
 
-const SignupForm: React.FC<SignupFormProps> = ({ onSuccess }) => {
+const SignupForm: React.FC= () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,6 +35,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ onSuccess }) => {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => { 
     e.preventDefault(); 
     try {
+      //add user to cognito user pool
       const { user }: ISignUpResult = await Auth.signUp({
         username: email,
         password,
@@ -42,6 +45,8 @@ const SignupForm: React.FC<SignupFormProps> = ({ onSuccess }) => {
           phone_number: phoneNumber,
         },
       });
+      console.log('Successfully added user to Cognito User Pool')
+      //add user to User table
       const params = {
         TableName: "User-dev",
         Item: {
@@ -58,37 +63,42 @@ const SignupForm: React.FC<SignupFormProps> = ({ onSuccess }) => {
       const data = await ddbDocClient.put(params).promise();
       console.log(data);
       console.log("Success - item added to DynamoDB table User");
-      onSuccess();
     } catch (err) {
       console.log("Error", err);
     }
   };
 
   return (
-    <form onSubmit={handleSignup}>
-    <div>
-    <label htmlFor="firstName">First Name:</label>
-      <input type="text" id="firstname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-    </div>
-    <div>
-    <label htmlFor="lastName">Last Name:</label>
-    <input type="text" id="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-    </div>
-    <div>
-    <label htmlFor="email">Email:</label>
-    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-    </div>
-    <div>
-    <label htmlFor="phone">Phone Number:</label>
-    <input type="tel" id="phone" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-    </div>
-    <div>
-    <label htmlFor="password">Password:</label>
-    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-    </div>
-
-      <button type="submit">Signup</button>
-    </form>
+    <>
+      <form onSubmit={handleSignup}>
+      <div>
+        <label htmlFor="firstName">First Name:</label>
+          <input type="text" id="firstname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name:</label>
+          <input type="text" id="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="email">Email:</label>
+          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="phone">Phone Number:</label>
+          <input type="tel" id="phone" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </div>
+      <div>
+        <button type="submit">Signup</button>
+      </div>
+      </form>
+      <div>
+        <Prompt/>
+      </div>
+    </>
   );
 };
 
