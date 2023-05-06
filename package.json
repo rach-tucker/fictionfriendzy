@@ -9,19 +9,41 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/api-rest": "^3.0.29",
+    "@aws-amplify/storage": "^5.2.3",
+    "@aws-amplify/ui-react": "^4.6.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.319.0",
+    "@aws-sdk/credential-providers": "^3.321.1",
     "@aws-sdk/lib-dynamodb": "^3.319.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
-    "aws-amplify": "^5.1.2",
+    "aws-amplify": "^5.1.3",
     "aws-sdk": "^2.1361.0",
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "express": "^4.18.2",
+    "googleapis": "^118.0.0",
+    "jwt-decode": "^3.1.2",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-google-button": "^0.7.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-recaptcha": "^2.3.10",
     "typescript": "5.0.4",
     "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/react-google-recaptcha": "^2.1.5",
+    "@types/react-recaptcha": "^2.3.4"
   }
 }
